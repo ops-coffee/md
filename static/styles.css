@@ -1,0 +1,54 @@
+/*
+ * ========================================
+ * 基础样式 (通常您的页面已有)
+ * ========================================
+ */
+/* ... (这里应包含您页面原有的基础样式，例如 body, #editor, #render_output_id 的布局样式) ... */
+
+
+/*
+ * ========================================
+ * 核心优化：PDF 导出（打印）专有样式控制
+ * ========================================
+ */
+@media print {
+    /* 1. 设置页面大小和边距 */
+    @page {
+        size: A4;
+        margin: 10mm; /* 10mm 相当于 1cm，与 JS 中的配置匹配 */
+    }
+
+    /* 2. 隐藏不需要导出的 UI 元素（工具栏、设置等） */
+    .tool_header, #container_foot, #cssSetting,
+    #drag_indicate, #fileWindow,
+    #file_export_container,
+    .popup, .popup_background {
+        display: none !important;
+    }
+
+    /* 3. **核心分页控制：避免内容被截断** */
+    /* 确保标题、表格、代码块等关键内容块不会在中间被分页 */
+    h1, h2, h3, h4,
+    table, figure, pre, blockquote,
+    img, tr {
+        page-break-inside: avoid !important;
+    }
+
+    /* 确保图片不会跨页（如果图片很大） */
+    img {
+        max-width: 100%;
+        page-break-after: auto;
+    }
+
+    /* 4. **手动分页标记**：在内容中插入 <div class="page-break"></div> 即可强制分页 */
+    .page-break {
+        page-break-after: always !important;
+    }
+
+    /* 调整主要内容区域的宽度以适应 A4 页面 */
+    #render_output_id {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
