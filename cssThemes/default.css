@@ -1,7 +1,6 @@
-/*<span  class="css_edit_note">可任意修改样式，或恢复预设值，保存后生效
-相对“默认样式”而作的修改会用  <span  class="css_edit_update">红色</span> 标注</span>*/
+/*<span  class="css_edit_note">可任意修改样式，或恢复预设值，保存后生效</span>*/
 
-.output_wrapper/*<span  class="css_edit_note">此属性为全局</span>*/
+.output_wrapper
 {
      font-size: 16px;
      color: #3e3e3e;
@@ -22,37 +21,25 @@
   padding: 0px;
 }
 
-p {/*<span  class="css_edit_note">段落</span>*/
+p {
   margin: 1.5em 0px;
   text-align: left !important;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   margin: 1.5em 0px;
   font-weight: bold;
 }
-h1 {
-  font-size: 1.6em;
-}
-h2 {
-  font-size: 1.4em;
-}
-h3 {
-  font-size: 1.3em;
-}
-h4 {
-  font-size: 1.2em;
-}
-h5 {
-  font-size: 1em;
-}
-h6 {
-  font-size: 1em;
-}
+h1 { font-size: 1.6em; }
+h2 { font-size: 1.4em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.2em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; }
 
 ul, ol {
   padding-left: 1.0em;
-  list-style-position: inside;
+  list-style-position: outside;
 }
 ul{
     list-style-type: disc;
@@ -67,6 +54,7 @@ li * {
 li{
     margin-bottom: 0.5em;
 }
+
 .code_size_default  /*<span  class="css_edit_note">代码块默认size</span>*/
 {
   line-height: 18px;
@@ -164,7 +152,7 @@ hr {  /*<span  class="css_edit_note">分隔线</span>*/
 img
 {
   display: block;
-  margin: 0 auto;  /*<span  class="css_edit_note">图片水平居中</span>*/
+  margin: 0 auto;
   max-width: 100%;
 }
 figcaption/*<span  class="css_edit_note">图片描述文字</span>*/
@@ -343,17 +331,17 @@ a[href^="#"] sup
 
 /* 绘制水平连接线： `-` 或 `--` */
 .toc_item::before {
-    content: "—"; /* 使用 Unicode 长破折号（—），视觉效果更像横线 */
+    content: "—";
     position: absolute;
     left: 0;
     top: 50%;
-    width: 20px; /* 宽度略大于 padding-left */
+    width: 20px;
     height: auto;
-    color: #cccccc; /* 连接线的颜色 */
+    color: #cccccc;
     font-size: 0.9em;
-    line-height: 1; /* 确保破折号垂直居中 */
+    line-height: 1;
     transform: translateY(-50%);
-    overflow: hidden; /* 隐藏多余的连接符 */
+    overflow: hidden;
 }
 
 /* 目录项的链接：作为可点击区域 */
@@ -373,8 +361,8 @@ a[href^="#"] sup
 .toc_left
 {/*<span  class="css_edit_note">每级目录的缩进容器</span>*/
   margin-left: 20px;
-  border-left: 1px dotted #cccccc; /* 垂直虚线 */
-  padding-left: 5px; /* 确保内容不贴着垂直线 */
+  border-left: 1px dotted #cccccc;
+  padding-left: 5px;
   position: relative;
 }
 
